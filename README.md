@@ -1,8 +1,12 @@
 Получить массивы GEO-данных, для последующей заливки в БД.
 В интернете много готовых дампов, а у меня мало ОЗУ.
 
+	composer require ivan-matthews/geo-package
+Или
+
 	composer require ivan-matthews/geo-package "dev-master"
 
+https://packagist.org/packages/ivan-matthews/geo-package
 
 ``Geo -> getCountriesFiles()`` - вернуть массив файлов стран
 

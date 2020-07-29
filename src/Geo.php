@@ -92,29 +92,32 @@
 		}
 
 		/**
+		 * @param int $sort
 		 * @return array
 		 */
-		public function getCountriesFiles()
+		public function getCountriesFiles($sort = SORT_NATURAL)
 		{
-			$this->setCountriesFiles();
+			$this->setCountriesFiles($sort);
 			return $this->geo_countries_files;
 		}
 
 		/**
+		 * @param int $sort
 		 * @return array
 		 */
-		public function getRegionsFiles()
+		public function getRegionsFiles($sort = SORT_NATURAL)
 		{
-			$this->setRegionsFiles();
+			$this->setRegionsFiles($sort);
 			return $this->geo_regions_files;
 		}
 
 		/**
+		 * @param int $sort
 		 * @return array
 		 */
-		public function getCitiesFiles()
+		public function getCitiesFiles($sort = SORT_NATURAL)
 		{
-			$this->setCitiesFiles();
+			$this->setCitiesFiles($sort);
 			return $this->geo_cities_files;
 		}
 

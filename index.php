@@ -12,7 +12,7 @@
 	$geo = new Geo();
 	$mysqli = new \mysqli(/* параметры подключения к БД */);
 
-	$geo->call($geo->getCountriesFiles(),function($file)use($geo,$mysqli){
+	$geo->getCountriesFiles(function($file)use($geo,$mysqli){
 		$file_data = include $file;					// подключить файл
 
 		$query_header = "INSERT INTO database.countries (`id`,`total_regions`,`total_cities`,`title_ru`,`title_en`) VALUES\n";

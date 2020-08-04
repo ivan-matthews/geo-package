@@ -8,11 +8,11 @@
 
 https://packagist.org/packages/ivan-matthews/geo-package
 
-``Geo -> getCountriesFiles()`` - вернуть массив файлов стран
+``Geo -> getCountriesFiles(callback functio[file] = NULL, sort = SORT_NATURAL)`` - вернуть массив файлов стран
 
-``Geo -> getRegionsFiles()`` - вернуть массив файлов регионов
+``Geo -> getRegionsFiles(callback functio[file] = NULL, sort = SORT_NATURAL)`` - вернуть массив файлов регионов
 
-``Geo -> getCitiesFiles()`` - вернуть массив файлов городов
+``Geo -> getCitiesFiles(callback functio[file] = NULL, sort = SORT_NATURAL)`` - вернуть массив файлов городов
 
 ``Geo -> getFileName()`` - вернуть имя текущего файла (без расширения) - полезно, когда надо будет пропустить ранее залитые данные в БД
 

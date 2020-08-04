@@ -93,31 +93,43 @@
 
 		/**
 		 * @param int $sort
+		 * @param callable $callback_function
 		 * @return array
 		 */
-		public function getCountriesFiles($sort = SORT_NATURAL)
+		public function getCountriesFiles(callable $callback_function = null, $sort = SORT_NATURAL)
 		{
 			$this->setCountriesFiles($sort);
+			if ($callback_function) {
+				return $this->call($this->geo_countries_files, $callback_function);
+			}
 			return $this->geo_countries_files;
 		}
 
 		/**
 		 * @param int $sort
+		 * @param callable $callback_function
 		 * @return array
 		 */
-		public function getRegionsFiles($sort = SORT_NATURAL)
+		public function getRegionsFiles(callable $callback_function = null, $sort = SORT_NATURAL)
 		{
 			$this->setRegionsFiles($sort);
+			if ($callback_function) {
+				return $this->call($this->geo_regions_files, $callback_function);
+			}
 			return $this->geo_regions_files;
 		}
 
 		/**
 		 * @param int $sort
+		 * @param callable $callback_function
 		 * @return array
 		 */
-		public function getCitiesFiles($sort = SORT_NATURAL)
+		public function getCitiesFiles(callable $callback_function = null, $sort = SORT_NATURAL)
 		{
 			$this->setCitiesFiles($sort);
+			if ($callback_function) {
+				return $this->call($this->geo_cities_files, $callback_function);
+			}
 			return $this->geo_cities_files;
 		}
 
@@ -133,7 +145,7 @@
 		/**
 		 * @param array $files_list
 		 * @param callable $callback_function
-		 * @return $this
+		 * @return array
 		 */
 		public function call(array $files_list, callable $callback_function)
 		{
@@ -141,7 +153,7 @@
 				$this->setCurrentFile($file);
 				call_user_func($callback_function, $file);
 			}
-			return $this;
+			return $files_list;
 		}
 
 
